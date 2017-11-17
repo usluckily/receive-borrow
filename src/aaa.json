@@ -1,0 +1,134 @@
+{
+  "Version": "1.0",
+  "Charset": "UTF-8",
+  "auth": "sesson_temp",
+  "saltkey": "726815",
+  "sid": "46",
+  "userid": "749513850",
+  "pic": "http://hyjy.oss-cn-shenzhen.aliyuncs.com/46/749513850/image/20171024/1508828655208.jpg",
+  "error": "success",
+  "approveitemnames": "",
+  "approveborrownames": "6aqG6ZuE5b2s",
+  "firstapprover": [],
+  "firstapproverborrow": [],
+  "itemtypedata": [
+    {
+      "itemtypeid": "117",
+      "scenario": "001",
+      "itemman": "572X5b2s",
+      "name": "5a2m55Sf5paH5YW3",
+      "picsummary": "http://hyjy.oss-cn-shenzhen.aliyuncs.com/46/383008850/image/20170818/20170818162419108112.jpg"
+    }
+  ],
+  "borrowtypedata": [
+    {
+      "itemtypeid": "116",
+      "scenario": "001",
+      "itemman": "572X5b2s",
+      "name": "5pWZ5a2m55So5YW3",
+      "picsummary": "http://hyjy.oss-cn-shenzhen.aliyuncs.com/46/383008850/image/20170818/20170818162144434200.jpg"
+    },
+    {
+      "itemtypeid": "118",
+      "scenario": "001",
+      "itemman": "572X5b2s",
+      "name": "5qCh55So5Zy65Zyw",
+      "picsummary": "http://hyjy.oss-cn-shenzhen.aliyuncs.com/46/383008850/image/20170914/20170914112151511037.png"
+    },
+    {
+      "itemtypeid": "136",
+      "scenario": "001",
+      "itemman": "5p2O576O5Y2O",
+      "name": "54mp5ZOB5YCf55So",
+      "picsummary": "http://hyjy.oss-cn-shenzhen.aliyuncs.com/46/383008850/image/20170912/20170912174434371884.jpg"
+    }
+  ],
+  "classtabledata": [
+    {
+      "classid": "2046",
+      "classname": "5YWt5bm0NOePrQ=="
+    },
+    {
+      "classid": "2051",
+      "classname": "6L+Q57u054+t"
+    },
+    {
+      "classid": "1649",
+      "classname": "5LiJ5bm057qnMeePrQ=="
+    },
+    {
+      "classid": "1707",
+      "classname": "5LiJ5bm057qnMuePrQ=="
+    },
+    {
+      "classid": "2049",
+      "classname": "5LqM5bm05LiJ54+t"
+    },
+    {
+      "classid": "1655",
+      "classname": "5LqM5bm057qnMeePrQ=="
+    },
+    {
+      "classid": "2048",
+      "classname": "5LiA5bm057qn5YWt54+t"
+    },
+    {
+      "classid": "2055",
+      "classname": "MTXnj60="
+    },
+    {
+      "classid": "1647",
+      "classname": "5LiA5bm057qnNOePrQ=="
+    },
+    {
+      "classid": "2047",
+      "classname": "5LiA5bm057qn5LqU54+t"
+    }
+  ],
+  "departmentdata": [
+    {
+      "deptid": "750",
+      "deptname": "6K+t5paH57uE"
+    },
+    {
+      "deptid": "751",
+      "deptname": "5pWw5a2m57uE"
+    },
+    {
+      "deptid": "752",
+      "deptname": "6Iux6K+t57uE"
+    },
+    {
+      "deptid": "753",
+      "deptname": "54mp55CG57uE"
+    },
+    {
+      "deptid": "754",
+      "deptname": "5YyW5a2m57uE"
+    },
+    {
+      "deptid": "755",
+      "deptname": "55Sf54mp57uE"
+    },
+    {
+      "deptid": "756",
+      "deptname": "5pS/5rK757uE"
+    },
+    {
+      "deptid": "757",
+      "deptname": "5Y6G5Y+y57uE"
+    },
+    {
+      "deptid": "758",
+      "deptname": "5Zyw55CG57uE"
+    },
+    {
+      "deptid": "805",
+      "deptname": "56S+5Lya5a6e6Le1"
+    },
+    {
+      "deptid": "807",
+      "deptname": "6Ieq5Lmg"
+    }
+  ]
+}
