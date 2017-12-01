@@ -3,10 +3,11 @@ import Router from 'vue-router'
 
 import borrow from './borrow'
 import receive from './receive'
+import test from './test'
 
 import choose from '@/components/choose'
 import borrowchoose from '@/components/borrowchoose'
-import test from '@/components/test/test'
+
 
 Vue.use(Router)
 
@@ -25,11 +26,7 @@ export default new Router({
       name:'borrowchoose',
       component:borrowchoose
     },
-    {
-      path:'/test',
-      name:'test',
-      component:test
-    }
+    ...test
 
   ]
 })

@@ -98,25 +98,24 @@
         </div>
         </div>
 
-      <!--<div class="con-box">-->
-        <!--<div class="item">-->
-          <!--<div>-->
-            <!--第一级审批人 :-->
-            <!--<input placeholder="选择第一级审批人*" readonly v-model="firstApprover.val" @click="setApprover" />-->
-          <!--</div>-->
-        <!--</div>-->
+      <div class="con-box">
+        <div class="item">
+          <div>
+            第一级审批人 :
+            <input placeholder="选择第一级审批人*" readonly v-model="firstApprover.val" @click="setApprover" />
+          </div>
+        </div>
 
-        <!--<div class="item">-->
-          <!--<div>-->
-            <!--审 &nbsp;批 &nbsp;人 :-->
-            <!--&lt;!&ndash;<input placeholder="" v-model="approveman" readonly/> &ndash;&gt;-->
-            <!--<span> {{ approveman }} </span>-->
-            <!--</textarea>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+        <div class="item">
+          <div>
+            审 &nbsp;批 &nbsp;人 :
+            <!--<input placeholder="" v-model="approveman" readonly/> -->
+            <span> {{ approveman }} </span>
+            </textarea>
+          </div>
+        </div>
+      </div>
 
-      <chooseApprover></chooseApprover>
 
       <div class="con-box">
         <div class="item">
@@ -141,7 +140,6 @@
   import remind from '@/components/common/remind'
   import modal from '@/components/common/modal'
   import gbg from '@/components/common/ghostbg'
-  import chooseApprover from '@/components/common/chooseapprover'
 
   import $ from 'jquery'
   import ajax from '@/assets/js/ajax'
@@ -449,8 +447,7 @@
       fl_box:flbox,
       r_mind:remind,
       my_modal:modal,
-      g_bg:gbg,
-      chooseApprover:chooseApprover
+      g_bg:gbg
     }
   })
 </script>

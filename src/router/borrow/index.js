@@ -3,6 +3,7 @@
  */
 import details from './details'
 import site from './site'
+import bus from './bus'
 
 import mainPage from '@/components'
 import apply from '@/components/borrow/bapply'
@@ -27,5 +28,6 @@ export default [
     component:apply
   },
   ...details,
-  ...site
+  ...site,
+  ...bus
 ]

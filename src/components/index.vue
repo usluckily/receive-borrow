@@ -2,7 +2,7 @@
   <transition name="page">
     <div class="all">
 
-      <div v-show="list.list.length < 1" class="prompt">
+      <div v-show="list.list.length < 1 && !loader" class="prompt">
         <p>{{ prompt.msg }}</p>
       </div>
       <!--无数据时的提示-->

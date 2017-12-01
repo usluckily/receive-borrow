@@ -26,33 +26,12 @@
           </div>
         </div>
 
-        <div class="item">
-          <div>
-            借用场地: <input placeholder="请输入场地名称"
-                          v-model="itemName.val"
-                          @click="setSite($event)"
-          />
-
-          </div>
-          <div>
-            <img src="../../../assets/img/icon/icon_audio@2x.png" class="icon" @click="test"/>
-          </div>
-        </div>
-
-        <div class="item">
-          <div>
-            申请数量 : <input placeholder="1" v-model="applyNum" @blur="numValidate(applyNum)"/>
-          </div>
-          <div>
-            <img src="../../../assets/img/icon/icon_audio@2x.png" class="icon" @click="test"/>
-          </div>
-        </div>
       </div>
 
       <div class="con-box">
         <div class="item">
           <div>
-            借用日期 : <input placeholder="借用日期*" v-model="pageborrowtime"  id="startdate"/>
+            用车日期 : <input placeholder="借用日期*" v-model="pageborrowtime"  id="startdate"/>
           </div>
           <div>
             <img src="../../../assets/img/arrows2.png" class="icon"/>
@@ -60,7 +39,7 @@
         </div>
         <div class="item">
           <div>
-            归还日期 : <input placeholder="归还日期*" v-model="pagereturntime"   id="enddate"/>
+            返回日期 : <input placeholder="归还日期*" v-model="pagereturntime"   id="enddate"/>
           </div>
           <div>
             <img src="../../../assets/img/arrows2.png" class="icon"/>
@@ -70,12 +49,34 @@
 
       <div class="con-box">
         <div class="item" style="display: block;">
-            <span class="speSpan">借用原因 :</span> <textarea placeholder="请输入申请原因..." v-model="applyReason" class="speTextarea" />
+            <span class="speSpan">用车事由 :</span> <textarea placeholder="请输入申请原因..." v-model="applyReason" class="speTextarea" />
           <div>
             <img src="../../../assets/img/icon/icon_audio@2x.png" class="icon" @click="test"/>
           </div>
         </div>
+      </div>
+
+      <div class="con-box">
+        <div class="item">
+          <div>
+            目的地 : <input placeholder="请输入*" v-model="destination"/>
+          </div>
         </div>
+
+        <div class="item">
+          <div>
+            车辆类型 : <input placeholder="请输入*"
+                          v-model="itemName.val"
+                          @click="setBus($event)"/>
+          </div>
+        </div>
+
+        <div class="item">
+          <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <span>是否往返 :</span> <m_checkBox ref="checkBox"></m_checkBox>
+          </div>
+        </div>
+      </div>
 
       <chooseApprover ref="chooseAppr"></chooseApprover>
 
@@ -93,6 +94,7 @@
   import modal from '@/components/common/modal'
   import gbg from '@/components/common/ghostbg'
   import chooseApprover from '@/components/common/chooseapprover'
+  import checkBox from '@/components/common/slidecheck'
 
   import $ from 'jquery'
   import ajax from '@/assets/js/ajax'
@@ -156,6 +158,7 @@
         pageborrowtime:'',
         applyNum:1,
         applyReason:'',
+        destination:'',
         itemman:'',
         firstApprover:{
           val:'',
@@ -170,7 +173,6 @@
         vm.$refs.chooseAppr.levelList.forEach(function(i,index){
           (index+1) == vm.$refs.chooseAppr.levelList.length ? str+=i.userId : str+=i.userId+','
         })
-        alert(str)
         return str
       }
     },
@@ -181,13 +183,13 @@
           sid:B.sid
         }
 
-      ajax.post(IF.getSiteBase,pObj,function(d){
+      ajax.post(IF.getBusBase,pObj,function(d){
         vm.basic.venuedate = d.venuedate
-      },['name','classname','deptname'])
+      },['name','classname','deptname','schoolBusName'])
 
       //add listen : addAppr  from @/components/common/chooseapprover
       vm.$root.eventHub.$on('addAppr',function(a){
-        ajax.post(IF.getSiteApprLevel,{ userId:B.userid,sid:B.sid,level:a.level },function(b){
+        ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level },function(b){
           vm.$root.eventHub.$emit('setApprLevel',b)
         })
       })
@@ -205,15 +207,17 @@
           sid:B.sid,
 //          classId:vm.deptOrClass.classid,//@#
           deptId:vm.deptOrClass.deptid,//@#
-          venueId:vm.itemName.id,//@#
+          schoolBusId:vm.itemName.id,//@#
           applyContent:vm.applyReason,
-          applyDate:vm.pageborrowtime,
-          endDate:vm.pagereturntime,
+          borrowTime:vm.pageborrowtime,
+          returnTime:vm.pagereturntime,
+          destination:vm.destination,
+          isReturn:vm.$refs.checkBox.check ? '0' : '1',
           approveUserIds:vm.approveUserIds
         }
         if(vm.itemName.id && vm.pagereturntime && vm.pageborrowtime && base.dateCompare(vm.pageborrowtime,vm.pagereturntime)){
-          ajax.post(IF.addSite,pObj,function(d){
-            vm.$router.replace({path:'/borrowSite'})
+          ajax.post(IF.addBus,pObj,function(d){
+            vm.$router.replace({path:'/borrowBus'})
           })
         }else if(!base.dateCompare(vm.pageborrowtime,vm.pagereturntime)){
           vm.modal.content = '日期不对'
@@ -287,11 +291,16 @@
           },['name'])
         }
       },
-      setSite(el){
+      setBus(el){
         let vm = this
         vm.searchList.top = ( $(el.target).offset().top + $('.all').scrollTop() )
         vm.searchList.target = el
-        vm.searchList.list = vm.basic.venuedate
+        vm.basic.venuedate.forEach(function(i){
+          vm.searchList.list.push({
+            id:i.schoolBusId,
+            name:i.schoolBusName
+          })
+        })
 
         vm.$root.eventHub.$off('setInfo')
         vm.$root.eventHub.$on('setInfo',function(d){
@@ -321,6 +330,7 @@
     },
     mounted(){
       let currYear = (new Date()).getFullYear() , vm = this
+
       $("#startdate").mobiscroll().date({
         theme: "android-ics light",
         lang: "zh",
@@ -374,7 +384,8 @@
       r_mind:remind,
       my_modal:modal,
       g_bg:gbg,
-      chooseApprover:chooseApprover
+      chooseApprover:chooseApprover,
+      m_checkBox:checkBox
     }
   })
 </script>

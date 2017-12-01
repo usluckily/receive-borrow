@@ -25,6 +25,14 @@ export default{
   getSiteBase:host+'/school/applyVenue_getListApplyVenue.do?method=toClientAdd',
   addSite:host+'/school/applyVenue_getListApplyVenue.do?method=clientAddApplyVenue',
   changeSiteApproveman:host+'/school/applyVenue_getListApplyVenue.do?method=toClientApply',
-  siteApprove:host+'/school/applyVenue_getListApplyVenue.do?method=clientApply'
+  siteApprove:host+'/school/applyVenue_getListApplyVenue.do?method=clientApply',
+  getSiteApprLevel:host+'/school/applyVenue_getListApplyVenue.do?method=clientNextUser',
+  getSiteDetails:host+'/school/applyVenue_getListApplyVenue.do?method=toClientApply',
 
+  getBusList:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=toClientList',
+  getBusBase:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=toClientAdd',
+  addBus:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=clientAddSchoolBusApplyFor',
+  getBusapprLevel:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=clientNextUser',
+  busApprove:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=clientSchoolBusApplyFor',
+  getBusDetails:host+'/school/schoolBusApplyFor_clientSchoolBusApplyFor.do?method=toClientApply'
 }

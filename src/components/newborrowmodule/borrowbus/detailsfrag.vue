@@ -16,10 +16,13 @@
 
     <div class="info-list">
       <p><span class="font2">借用部门:</span>  <span>{{ itemInfo.dept }} {{ itemInfo.classname }}</span></p>
-      <p><span class="font2">物品场地:</span>  <span>{{ itemInfo.venue }}</span></p>
-      <p><span class="font2">借用理由:</span>  <span>{{ itemInfo.content }}</span></p>
-      <p><span class="font2">借用日期:</span>  <span>{{ itemInfo.createTime | dateFilter }}</span></p>
-      <p><span class="font2">归还日期:</span>  <span>{{ itemInfo.returnTime | dateFilter  }}</span></p>
+      <p><span class="font2">用车事由:</span>  <span>{{ itemInfo.content }}</span></p>
+      <p><span class="font2">用车日期:</span>  <span>{{ itemInfo.createTime | dateFilter }}</span></p>
+      <p><span class="font2">返回日期:</span>  <span>{{ itemInfo.returnTime | dateFilter  }}</span></p>
+      <p style="border-bottom:1px solid #eee"></p>
+      <p><span class="font2">始发地点:</span>  <span>学校</span></p>
+      <p><span class="font2">车辆类型:</span>  <span>{{ itemInfo.venue }}</span></p>
+      <p><span class="font2">是否往返:</span>  <span>{{ itemInfo.isReturn == '0' ? '返回' : '不返回' }}</span></p>
     </div>
   </div>
 </template>

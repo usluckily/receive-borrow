@@ -23,7 +23,7 @@ export default[
     ]
   },
   {
-    path:'/borrowSite/:id',
+    path:'/borrowSite/:status/details/:id',
     name:'siteDetails',
     component:details,
     children:[
@@ -44,13 +44,6 @@ export default[
   {
     path:'/siteApply',
     name:'siteApply',
-    component:apply,
-    beforeRouteEnter: (to, from, next) => {
-      // ...
-      next(vm => {
-        // 通过 `vm` 访问组件实例
-        vm.$store.state.site.test = 'adasasdasdasdasdas'
-      })
-    }
+    component:apply
   }
 ]

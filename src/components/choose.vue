@@ -32,15 +32,6 @@
             <!--<p>{{ i.name }}</p>-->
           <!--</li>-->
 
-          <!--test-->
-          <router-link class="tab" tag="li" to="/borrow/apply/">
-            <div class="tab_img_box">
-              <img src="../assets/img/icon/icon_rec_n.png"/>
-            </div>
-            <p>测试模块</p>
-          </router-link>
-
-
         </ul>
       </div>
 

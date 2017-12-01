@@ -203,6 +203,51 @@ input,textarea,button{
   margin-right: 0.5rem;
 }
 
+
+
+.icon-list{
+  width:100%;
+  padding: 1rem 0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+}
+.icon-box{
+  width:25%;
+  height:auto;
+  margin:0.5rem 0;
+  text-align:center;
+  position:relative;
+  transition:opacity 0.3s ease;
+}
+.icon-box>.icon-img-box{
+  width:4.2rem;
+  height:4.2rem;
+  margin: 0 auto 0.5rem;
+  border-radius:50%;
+  overflow:hidden;
+}
+.icon-box>.icon-img-box>img{
+  width:100%;
+  min-height:100%;
+}
+.icon-box>p{
+  width:100%;
+  overflow:hidden;
+  font-size:0.9rem;
+  color:#666;
+}
+.icon-box>span{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  top:-0.3rem;
+  color:#999;
+  font-size:0.75rem;
+}
+
+
+
 .flex-box{
   display:flex;
 }

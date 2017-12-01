@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 //
 // let basicParams = {userid:'722471394',sid:'46',perm:['ASD','SZWPGLY','WPLYTY'],roleid:'676,193'};
-let basicParams = {userid:'439081366',sid:'143',perm:['WPJYTY'],roleid:'2462,2460'};//171
+let basicParams = {userid:'869185114',sid:'41',perm:['WPJYTY'],roleid:'2462,2460'};//171
 
 const store = new Vuex.Store({
   state:{

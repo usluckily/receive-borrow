@@ -22,7 +22,7 @@
       </div>
 
       <f_btn>
-        <router-link  :to="'/siteApply'" class="fbtn" tag="div" >场地申请</router-link>
+        <router-link  :to="'/busApply'" class="fbtn" tag="div" >校车申请</router-link>
       </f_btn>
 
     </div>
@@ -94,7 +94,7 @@
           }
 
           vm.loader = true
-          ajax.post(IF.getSiteList,vm.pObj,function(d){
+          ajax.post(IF.getBusList,vm.pObj,function(d){
             vm.list.list = d.data
             vm.loader = false
           })
@@ -107,7 +107,7 @@
 
         vm.$root.eventHub.$on('slide',function(d){
           vm.loader = true
-          ajax.post(IF.getSiteList,{ status:d+1,userId:BP.userid,sid:BP.sid,permission:vm.obj.showall },function(d){
+          ajax.post(IF.getBusList,{ status:d+1,userId:BP.userid,sid:BP.sid,permission:vm.obj.showall },function(d){
             vm.list.list = d.data
             vm.loader = false
           })

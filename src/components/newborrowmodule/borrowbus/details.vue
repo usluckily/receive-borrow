@@ -31,7 +31,7 @@
       <f_btn style="background:none;">
 
         <!--my-->
-        <div class="fbtn" v-if="module == 'my' && ( itemInfo.status == '1' || itemInfo.status == '2' )" @click="changeItemStatu('4')">取消</div>
+        <div class="fbtn" v-if="module == 'my' && ( itemInfo.status == '1' || itemInfo.status == '2' )" @click="changeItemStatu('4')">撤销</div>
         <!--my-->
 
         <!--dsp-->
@@ -76,7 +76,7 @@
           id:itemid,
         }
 
-        ajax.post(IF.getSiteDetails,pObj,function(d){
+        ajax.post(IF.getBusDetails,pObj,function(d){
           vm.approveList.list = d.venuedate[0];
           vm.itemInfo = d.applyVenue
         },['username','status','comment'])
@@ -109,7 +109,7 @@
 
             pObj.applyContent = d.reply
 
-            ajax.post(IF.siteApprove,pObj,function(d){
+            ajax.post(IF.busApprove,pObj,function(d){
 
               vm.$root.eventHub.$emit('promptOpen',{ content:'操作成功!' })
 

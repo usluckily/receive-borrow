@@ -28,9 +28,8 @@
       },
       methods:{
         leaveMsg(){
-          let vm = this , B = vm.$store.state.BP ,
+          let vm = this , B = vm.$store.state.BP,
             pObj = {
-//              url:IF.leaveMsg,
               userid:B.userid,
               sid:B.sid,
               itemid:vm.$route.params.id,

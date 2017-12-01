@@ -11,7 +11,7 @@ let obj = {
 };
 
 let perm;
-perm = 'ASD,SZWPGLY,WPJYTY'
+perm = 'ASD' //SZWPGLY,WPJYTY
 
 if(window.GreenSchool){
   GreenSchool.showLeftBtn(false)
@@ -92,6 +92,7 @@ export default{
       }
 
       if(typeof perm == 'string'){
+
         perm = perm.split(',')
       }
       // isInArr('WPLYTY',perm) ? obj.permissions = 'WPLYTY' : isInArr('SZWPGLY',perm) ? obj.permissions = 'SZWPGLY' : obj.permissions = ''
