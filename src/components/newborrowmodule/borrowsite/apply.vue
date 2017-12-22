@@ -170,7 +170,6 @@
         vm.$refs.chooseAppr.levelList.forEach(function(i,index){
           (index+1) == vm.$refs.chooseAppr.levelList.length ? str+=i.userId : str+=i.userId+','
         })
-        alert(str)
         return str
       }
     },
@@ -187,8 +186,8 @@
 
       //add listen : addAppr  from @/components/common/chooseapprover
       vm.$root.eventHub.$on('addAppr',function(a){
-        ajax.post(IF.getSiteApprLevel,{ userId:B.userid,sid:B.sid,level:a.level },function(b){
-          vm.$root.eventHub.$emit('setApprLevel',b)
+        ajax.post(IF.getSiteApprLevel,{ userId:B.userid,sid:B.sid,level:a.level },function(data){
+          vm.$root.eventHub.$emit('setApprLevel',data)
         })
       })
 

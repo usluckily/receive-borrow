@@ -11,7 +11,7 @@ let obj = {
 };
 
 let perm;
-perm = 'ASD' //SZWPGLY,WPJYTY
+perm = 'WPJYTY' //SZWPGLY,WPJYTY
 
 if(window.GreenSchool){
   GreenSchool.showLeftBtn(false)

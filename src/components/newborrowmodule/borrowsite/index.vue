@@ -101,13 +101,20 @@
         }
       },
       created(){
-        let vm = this , BP = vm.$store.state.BP
+        let vm = this , BP = vm.$store.state.BP , frMe = false
         vm.obj = config.getBase(this.$route.name)
         vm.init()
 
         vm.$root.eventHub.$on('slide',function(d){
           vm.loader = true
-          ajax.post(IF.getSiteList,{ status:d+1,userId:BP.userid,sid:BP.sid,permission:vm.obj.showall },function(d){
+
+          if(vm.navList.list[d].id == 'frMe'){
+            frMe = true
+          }else{
+            frMe = false
+          }
+
+          ajax.post(IF.getSiteList,{ status:frMe ? undefined : d+1,userId:BP.userid,sid:BP.sid,permission:frMe ? 0 : vm.obj.showall },function(d){
             vm.list.list = d.data
             vm.loader = false
           })

@@ -104,7 +104,7 @@ input,textarea,button{
 .con-box > .item{
   width:100%;
   border-bottom:1px solid #F0F0F0;
-  padding:1rem 0;
+  padding:0.8rem 0;
   display:flex;
   justify-content:space-between;
 }
@@ -113,6 +113,7 @@ input,textarea,button{
   color:#999;
   width:12rem;
   line-height: 2rem;
+  font-size:0.8rem;
 }
 
 .fbtn-box{
@@ -198,8 +199,8 @@ input,textarea,button{
 }
 
 .head-icon{
-  width:1.2rem;
-  height:1.2rem;
+  width:1.5rem;
+  height:1.5rem;
   margin-right: 0.5rem;
 }
 
@@ -207,7 +208,7 @@ input,textarea,button{
 
 .icon-list{
   width:100%;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   display:flex;
   flex-wrap:wrap;
   justify-content:flex-start;
@@ -294,7 +295,7 @@ input,textarea,button{
 }
 .speTextarea{
   width:auto;
-  height:4rem;
+  height:6rem;
   margin-left:5.5rem;
   border:none;
   color:#666;

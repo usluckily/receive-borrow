@@ -28,3 +28,4 @@
 <style src="./assets/css/base.css"></style>
 <style src="./assets/css/swiper-3.3.1.min.css"></style>
 <style src="./assets/css/mobiscroll.css"></style>
+<style src="./assets/css/loader.css"></style>

@@ -47,6 +47,14 @@
             <img src="../../assets/img/icon/icon_audio@2x.png" class="icon"/>
           </div>
         </div>
+
+        <div class="item">
+          <div>
+            单位 :
+            <input placeholder="单位*" type="text" v-model="itemName.unit" maxlength="2"/>
+          </div>
+        </div>
+
       </div>
 
       <div class="con-box">
@@ -60,32 +68,34 @@
         </div>
       </div>
 
-      <div class="con-box">
-        <div class="item">
-          <div>
-            第一级审批人 :
-            <input placeholder="请选择第一级审批人" readonly v-model="firstApprover.val" @click="setApprover"/>
-          </div>
-        </div>
+      <chooseApprover ref="chooseAppr"></chooseApprover>
 
-        <div class="item">
-          <div>
-            审 &nbsp;批 &nbsp;人 :
-            <!--<input placeholder="" readonly v-model="approveman"/>-->
-            <span> {{ approveman }} </span>
-          </div>
-        </div>
-      </div>
+      <!--<div class="con-box">-->
+        <!--<div class="item">-->
+          <!--<div>-->
+            <!--第一级审批人 :-->
+            <!--<input placeholder="请选择第一级审批人" readonly v-model="firstApprover.val" @click="setApprover"/>-->
+          <!--</div>-->
+        <!--</div>-->
 
-      <div class="con-box">
-        <div class="item">
-          <div>
-            发 &nbsp;放 &nbsp;人 :
-            <!--<input placeholder="" readonly v-model="itemman"/>-->
-            <span> {{ itemman }} </span>
-          </div>
-        </div>
-      </div>
+        <!--<div class="item">-->
+          <!--<div>-->
+            <!--审 &nbsp;批 &nbsp;人 :-->
+            <!--&lt;!&ndash;<input placeholder="" readonly v-model="approveman"/>&ndash;&gt;-->
+            <!--<span> {{ approveman }} </span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div class="con-box">-->
+        <!--<div class="item">-->
+          <!--<div>-->
+            <!--发 &nbsp;放 &nbsp;人 :-->
+            <!--&lt;!&ndash;<input placeholder="" readonly v-model="itemman"/>&ndash;&gt;-->
+            <!--<span> {{ itemman }} </span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
       <f_btn style="position:relative;">
         <div @click="sub" class="fbtn">{{ btnText }}</div>
@@ -100,6 +110,7 @@
   import remind from '@/components/common/remind'
   import modal from '@/components/common/modal'
   import gbg from '@/components/common/ghostbg'
+  import chooseApprover from '@/components/common/chooseapprover'
 
   import $ from 'jquery'
   import ajax from '@/assets/js/ajax'
@@ -148,7 +159,8 @@
           },
           itemName:{
             val:'',
-            id:''
+            id:'',
+            unit:''
           },
           applyNum:1,
           applyReason:'',
@@ -158,6 +170,17 @@
             val:'',
             id:''
           }
+        }
+      },
+      computed:{
+        approveUserIds(){
+          let vm = this , obj = [] , str = ''
+          vm.$refs.chooseAppr.levelList.forEach(function(i,index){
+//            (index+1) == vm.$refs.chooseAppr.levelList.length ? str+=i.userId : str+=i.userId+','
+            obj['approver'+(index+1)] = i.userId
+          })
+          console.log(obj)
+          return obj
         }
       },
       created(){
@@ -174,6 +197,13 @@
         vm.$root.eventHub.$on('remindShow',function(d){
           vm.remind.show = d
         })
+
+        vm.$root.eventHub.$on('addAppr',function(a){
+          ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level,servicecode:'WPLY' },function(b){
+            vm.$root.eventHub.$emit('setApprLevel',b)
+          })
+        })
+
 
       },
       mounted(){
@@ -195,13 +225,15 @@
             itemtypeid:vm.itemType.id,//@#
             itemtnum:vm.applyNum,
             goodsmanagementid:vm.itemName.id,//@#
-            approver:vm.firstApprover.id,
+//            approver:vm.firstApprover.id,
             itemname:vm.itemName.val,
             note:vm.applyReason,
-            type:config.obj.type
+            type:'1',
+            itemunit:vm.itemName.unit,
+            ...vm.approveUserIds
           }
 
-          if(vm.itemName.val && vm.itemType.val && vm.deptOrClass.val){
+          if(vm.itemName.val && vm.itemType.val && vm.deptOrClass.val && vm.itemName.unit){
             ajax.post(IF.addData,pObj,function(d){
               vm.$router.replace({path:'/receive'})
             })
@@ -336,7 +368,8 @@
         fl_box:flbox,
         r_mind:remind,
         my_modal:modal,
-        g_bg:gbg
+        g_bg:gbg,
+        chooseApprover:chooseApprover,
       }
     })
 </script>

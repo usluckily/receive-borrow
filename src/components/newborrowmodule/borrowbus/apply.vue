@@ -66,6 +66,7 @@
         <div class="item">
           <div>
             车辆类型 : <input placeholder="请输入*"
+                          readonly
                           v-model="itemName.val"
                           @click="setBus($event)"/>
           </div>
@@ -189,7 +190,7 @@
 
       //add listen : addAppr  from @/components/common/chooseapprover
       vm.$root.eventHub.$on('addAppr',function(a){
-        ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level },function(b){
+        ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level,servicecode:'XCSQ' },function(b){
           vm.$root.eventHub.$emit('setApprLevel',b)
         })
       })
@@ -295,6 +296,7 @@
         let vm = this
         vm.searchList.top = ( $(el.target).offset().top + $('.all').scrollTop() )
         vm.searchList.target = el
+        vm.searchList.list = []
         vm.basic.venuedate.forEach(function(i){
           vm.searchList.list.push({
             id:i.schoolBusId,

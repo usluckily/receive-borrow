@@ -3,6 +3,8 @@
 
     <div class="pop-panel" v-show="popPanelShow">
 
+      <m_ballPulse v-show=" ballpulse_loader "></m_ballPulse>
+
       <div v-for="i in approverList" @click="setLevel(i)" class="pop-item">
         <div>
           <img :src="i.userPic" v-if=" i.userPic != '' && i.userPic != 'null' "/>
@@ -11,7 +13,7 @@
         <span>{{ i.userName }}</span>
       </div>
 
-      <div class="fbtn-box">
+      <div class="fbtn-box" style="z-index:101;">
         <div class="fbtn" @click="popClose">关闭</div>
       </div>
     </div>
@@ -64,6 +66,8 @@
   </div>
 </template>
 <script>
+  import ballPulse from '@/components/loader/ballpulse'
+
     export default({
       name: 'chooseApprover',
       props:{
@@ -76,7 +80,8 @@
           approverList:[],//pop list
           levelList:[],
           popPanelShow:false,//pop-panel show
-          num:1
+          num:1,
+          ballpulse_loader:true
         }
       },
       created(){
@@ -85,11 +90,11 @@
 
         //from @/components/newborrowmodule/borrowsite/apply
         vm.$root.eventHub.$on('setApprLevel',function(d){
-          if(d[0].status == 'error'){
-            vm.approverList = []
+          vm.ballpulse_loader = false
+          if(d[0].status){
+            d[0].status == 'error' ? vm.approverList = [] : ''
             return
           }
-
           vm.approverList = d
 
         })
@@ -103,6 +108,7 @@
           this.$root.eventHub.$emit('addAppr',{ level:this.level })
           this.popPanelShow = true
           this.approverList = []
+          this.ballpulse_loader = true
         },
         setLevel(i){
           this.levelList.push(i)
@@ -139,7 +145,7 @@
         this.$root.eventHub.$off('setApprLevel')
       },
       components:{
-
+        m_ballPulse:ballPulse
       }
     })
 </script>
