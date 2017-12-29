@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <chooseApprover ref="chooseAppr"></chooseApprover>
+      <chooseApprover ref="chooseAppr" :hideSecondBar="true"></chooseApprover>
 
       <!--<div class="con-box">-->
         <!--<div class="item">-->
@@ -87,15 +87,15 @@
         <!--</div>-->
       <!--</div>-->
 
-      <!--<div class="con-box">-->
-        <!--<div class="item">-->
-          <!--<div>-->
-            <!--发 &nbsp;放 &nbsp;人 :-->
-            <!--&lt;!&ndash;<input placeholder="" readonly v-model="itemman"/>&ndash;&gt;-->
-            <!--<span> {{ itemman }} </span>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="con-box">
+        <div class="item">
+          <div>
+            发 &nbsp;放 &nbsp;人 :
+            <!--<input placeholder="" readonly v-model="itemman"/>-->
+            <span> {{ itemman }} </span>
+          </div>
+        </div>
+      </div>
 
       <f_btn style="position:relative;">
         <div @click="sub" class="fbtn">{{ btnText }}</div>
@@ -199,7 +199,7 @@
         })
 
         vm.$root.eventHub.$on('addAppr',function(a){
-          ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level,servicecode:'WPLY' },function(b){
+          ajax.post(IF.getBusapprLevel,{ userId:B.userid,sid:B.sid,level:a.level,serviceCode:'WPLY' },function(b){
             vm.$root.eventHub.$emit('setApprLevel',b)
           })
         })

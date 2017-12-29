@@ -4,7 +4,7 @@
     <div class="reply-box" >
       <div class="rbox-head">{{ title }}</div>
       <div class="rbox-con">
-      <textarea placeholder="请输入回复内容(必填)" v-model="replyMsg">
+      <textarea placeholder="请输入回复内容(必填)" v-model="replyMsg" id="msg">
 
       </textarea>
       </div>
@@ -17,6 +17,8 @@
 
 </template>
 <script>
+  import $ from 'jquery'
+
     export default({
       name: 'replybox',
       props:{
@@ -48,11 +50,16 @@
         },
         ok(){
           let vm = this
-          if( vm.replyMsg == '' ){
+          $('#msg').blur()
+
+          if( vm.replyMsg.trim() == '' ){
             vm.$root.eventHub.$emit('promptOpen',{ content:'请输入留言' })
             return
           }
-          vm.$root.eventHub.$emit('rbox-ok',{ reply:vm.replyMsg })
+
+          setTimeout(function(){
+            vm.$root.eventHub.$emit('rbox-ok',{ reply:vm.replyMsg })
+          },500)
         }
       },
       watch:{

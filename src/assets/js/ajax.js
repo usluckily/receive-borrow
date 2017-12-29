@@ -73,10 +73,12 @@ export default{
       success(d){
         // alert(d)
 
+        // console.log(d.replace(/\s/g, ""))
+
         let res
         if(typeof d == 'string'){
           try{
-            res = JSON.parse(d)
+            res = JSON.parse(d.replace(/\s/g, ""))
           }catch(e){ throw e }
         }else{
           res = d

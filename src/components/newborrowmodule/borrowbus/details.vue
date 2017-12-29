@@ -35,7 +35,7 @@
         <!--my-->
 
         <!--dsp-->
-        <div class="fbtn-box2" v-if="module == 'dsp' && itemInfo.flag == '0' ">
+        <div class="fbtn-box2" v-if="module == 'dsp' && itemInfo.status == '1' ">
           <div class="fbtn" @click="changeItemStatu('3')" >驳回</div>
           <div class="fbtn" @click="changeItemStatu('2')">同意</div>
         </div>

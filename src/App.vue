@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <m_prompt></m_prompt>
     <router-view></router-view>
   </div>
 </template>
@@ -8,12 +9,17 @@
   import {NI} from '@/assets/js/nodeInit'
   import config from '@/assets/js/config'
 
+  import prompt from '@/components/common/prompt'
+
   export default {
     name: 'app',
     created(){
       NI().rootFontSize();
 //      let obj = config.getBase(this.$route.name);
 //      console.log(obj)
+    },
+    components:{
+      m_prompt:prompt
     }
   }
 </script>

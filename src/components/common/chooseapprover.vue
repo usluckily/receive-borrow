@@ -50,7 +50,7 @@
 
     </div>
 
-    <div class="item" v-if="provideObj.userName">
+    <div class="item" v-if="provideObj.userName && !hideSecondBar">
 
       <div>发放人：</div>
 
@@ -71,7 +71,10 @@
     export default({
       name: 'chooseApprover',
       props:{
-
+        hideSecondBar:{
+          type:Boolean,
+          default:false
+        }
       },
       data(){
         return {
