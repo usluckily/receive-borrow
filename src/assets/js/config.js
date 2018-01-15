@@ -11,7 +11,7 @@ let obj = {
 };
 
 let perm;
-perm = 'WPJYTY' //SZWPGLY,WPJYTY
+perm = 'WPLYTY' //SZWPGLY,WPJYTY
 
 if(window.GreenSchool){
   GreenSchool.showLeftBtn(false)
@@ -70,6 +70,7 @@ export default{
           obj.nav = [
             {tit:'待发放',id:'2',module:'dff'},
             {tit:'已发放',id:'3',module:'yff'},
+            {tit:'已驳回',id:'8',module:'ybh'},
             {tit:'我的',id:'frMe',module:'my'},
           ];
           break;
@@ -77,6 +78,7 @@ export default{
           obj.nav = [
             {tit:'待审批',id:'1',module:'dsp'},
             {tit:'已审批',id:'2',module:'ysp'},
+            {tit:'已驳回',id:'8',module:'ybh'},
             {tit:'我的',id:'frMe',module:'my'},
           ]
           break;

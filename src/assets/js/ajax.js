@@ -78,7 +78,7 @@ export default{
         let res
         if(typeof d == 'string'){
           try{
-            res = JSON.parse(d.replace(/\s/g, ""))
+            res = JSON.parse(d)
           }catch(e){ throw e }
         }else{
           res = d

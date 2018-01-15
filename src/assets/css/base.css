@@ -285,6 +285,12 @@ input,textarea,button{
 .tab img{
   width:80%;
 }
+.tab{width:100%;padding-top:0.5rem;}
+.tab ul{display:flex;flex-wrap:wrap;justify-content:flex-start;}
+.tab ul li{width:33.33% !important;text-align:center;margin-top: 0.5rem;padding: 0.5rem 0;}
+.tab ul li .tab_img_box{width:3rem;height:3rem;overflow:hidden;margin:0 auto;}
+.tab_img_box img{width:100%;display:block;min-height:100%;}
+.tab ul li p{font-size:0.9rem;color:#666;line-height:2rem;overflow: hidden;display:block;text-overflow: ellipsis;white-space: nowrap;}
 
 
 .speSpan{

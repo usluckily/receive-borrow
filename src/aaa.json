@@ -1,188 +1,56 @@
 {
-  "Version": "1.0",
-  "Charset": "UTF-8",
-  "auth": "sesson_temp",
-  "saltkey": "839210",
-  "sid": "4",
-  "userid": "458850415",
-  "total": "1",
-  "ipage": "1",
-  "error": "success",
-  "number": "0",
   "data": [
     {
-      "id": "4",
-      "userId": "462732669",
-      "userName": "蔡凤玲",
-      "schoolBusId": "2",
-      "schoolBusName": "WJ1231T",
-      "note": "考虑图UK就吐的厉害不害羞什么时候回来的人了啊啊啊啊啊我的小可爱小可爱的男孩子还是可以接受了委屈了吗我现在都不想玩游戏",
-      "borrowTime": "2017-12-15 11:08:00.0",
-      "returnTime": "2017-12-16 11:08:00.0",
-      "inputTime": "2017-12-15 11:09:06.0",
-      "status": "2",
-      "level": "1",
-      "approveUserIds": "242950409,458850415",
-      "destination": "KKK哦就KKK",
-      "isReturn": "0",
-      "updateUserid": "0"
-    },
-    {
-      "id": "3",
-      "userId": "330356574",
-      "userName": "邓敏凯",
-      "schoolBusId": "2",
-      "schoolBusName": "WJ1231T",
-      "note": "为二位",
-      "borrowTime": "2017-12-07 15:53:35.0",
-      "returnTime": "2017-12-08 15:53:37.0",
-      "inputTime": "2017-12-06 15:53:34.0",
-      "status": "2",
-      "level": "1",
-      "approveUserIds": "242950409,458850415",
-      "destination": "小梅沙",
-      "isReturn": "0",
-      "updateUserid": "0"
-    },
-    {
-      "id": "2",
-      "userId": "330356574",
-      "userName": "邓敏凯",
-      "schoolBusId": "2",
-      "schoolBusName": "WJ1231T",
-      "note": "	       121212
-      ","
-      borrowTime
-      ":"
-      2017
-      -12
-      -0
-      7
-      15: 49
-      :
-      43.0
-      ","
-      returnTime
-      ":"
-      2017
-      -12
-      -0
-      8
-      15: 49
-      :
-      45.0
-      ","
-      inputTime
-      ":"
-      2017
-      -12
-      -0
-      6
-      15: 49
-      :
-      47.0
-      ","
-      status
-      ":"
-      2
-      ","
-      level
-      ":"
-      1
-      ","
-      approveUserIds
-      ":"
-      242950409,
-      458850415
-      ","
-      destination
-      ":"
-      世界之窗
-      ","
-      isReturn
-      ":"
-      0
-      ","
-      updateUserid
-      ":"
-      0
-      "},{"
-      id
-      ":"
-      1
-      ","
-      userId
-      ":"
-      827048131
-      ","
-      userName
-      ":"
-      韩启佐
-      ","
-      schoolBusId
-      ":"
-      2
-      ","
-      schoolBusName
-      ":"
-      WJ1231T
-      ","
-      note
-      ":"
-      121212
-      ","
-      borrowTime
-      ":"
-      2017
-      -12
-      -0
-      6
-      18: 13
-      :
-      46.0
-      ","
-      returnTime
-      ":"
-      2017
-      -12
-      -0
-      7
-      18: 13
-      :
-      47.0
-      ","
-      inputTime
-      ":"
-      2017
-      -12
-      -0
-      5
-      18: 14
-      :
-      11.0
-      ","
-      status
-      ":"
-      2
-      ","
-      level
-      ":"
-      1
-      ","
-      approveUserIds
-      ":"
-      242950409,
-      458850415
-      ","
-      destination
-      ":"
-      121111
-      ","
-      isReturn
-      ":"
-      1
-      ","
-      updateUserid
-      ":"
-      0
-      "}]}
+      "con": [
+        {
+          "语文": "67",
+          "name": "null",
+          "id": "8477",
+          "courseid": "null"
+        },
+        {
+          "英语": "89",
+          "name": "null",
+          "id": "8478",
+          "courseid": "null"
+        },
+        {
+          "数学": "89",
+          "name": "null",
+          "id": "8479",
+          "courseid": "null"
+        },
+        {
+          "历史": "66",
+          "name": "null",
+          "id": "8480",
+          "courseid": "null"
+        },
+        {
+          "音乐": "78",
+          "name": "null",
+          "id": "8481",
+          "courseid": "null"
+        },
+        {
+          "自然": "55",
+          "name": "null",
+          "id": "8482",
+          "courseid": "null"
+        },
+        {
+          "科学": "77",
+          "name": "null",
+          "id": "8483",
+          "courseid": "null"
+        },
+        {
+          "体育": "33",
+          "name": "null",
+          "id": "8484",
+          "courseid": "null"
+        }
+      ]
+    }
+  ]
+}

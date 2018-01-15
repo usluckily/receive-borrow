@@ -13,11 +13,11 @@
             <img src="../../../assets/img/icon/icon_n_wancheng@2x.png" class="icon" v-if=" i.status != '已驳回' " />
             <img src="../../../assets/img/icon/icon_bohui@2x.png" class="icon" v-if=" i.status == '已驳回' "/>
             <div>
-              <img :src="itemInfo.userPic" v-if=" itemInfo.userPic != '' " class="head-icon"/>
+              <img :src="i.pic" v-if=" i.pic != '' " class="head-icon"/>
               <img src="../../../assets/img/defaultheadpic.jpg" class="head-icon" v-else/>
               <p class="font3">
                 <span>
-                  {{ i.status }}  {{ itemInfo.usreName }}
+                  {{ i.status }}  {{ i.applyName }}
                 </span>
                 <span>{{ i.createtime | dateFilter }}</span>
                 <span style="width:100%;">{{ i.remarks }}</span>
@@ -35,7 +35,7 @@
         <!--my-->
 
         <!--dsp-->
-        <div class="fbtn-box2" v-if="module == 'dsp' && itemInfo.status == '1'">
+        <div class="fbtn-box2" v-if="module == 'dsp' && itemInfo.status == '1' && itemInfo.flag == '0'">
           <div class="fbtn" @click="changeItemStatu('3')" >驳回</div>
           <div class="fbtn" @click="changeItemStatu('2')">同意</div>
         </div>
